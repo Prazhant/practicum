@@ -1,0 +1,1 @@
+select pa_id,dcr_desc, epi_SocDate, epi_StartOfEpisode,epi_EndOfEpisode,epi_DischargeDate,DaysToDeath,cedd_dateofdeath,M0906_DC_TRAN_DTH_DT from data_updated where pa_id = 19337

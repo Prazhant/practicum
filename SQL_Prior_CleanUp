@@ -1,0 +1,32 @@
+select pa_id,count(*) from data group by pa_id;
+select count(*) from (select distinct pa_id from data)
+
+select * from data where pa_id=17290
+
+select * from data where pa_id=15946
+
+select * from data where pa_id=16980
+
+
+
+select * from data where pa_id=19370
+
+select count(*) from data
+
+SELECT COUNT(DISTINCT pa_id) AS count FROM data where dcr_desc = 'PATIENT EXPIRED' and DaysToDeath is null
+ 
+SELECT COUNT(DISTINCT pa_id) AS count FROM (SELECT * from data where DaysToDeath is not null)
+
+select * from data where daystodeath is not null and dcr_desc <> 'PATIENT EXPIRED'
+
+select count(*) from data where cedd_dateofdeath =''
+
+select * from data where DaysToDeath is not null
+
+select pa_id,dcr_desc, epi_SocDate, epi_StartOfEpisode,epi_EndOfEpisode,epi_DischargeDate,DaysToDeath,cedd_dateofdeath,M0906_DC_TRAN_DTH_DT from data where pa_id = 18715
+
+select pa_id,dcr_desc, epi_SocDate, cedd_dateofdeath,epi_StartOfEpisode,epi_DischargeDate,DaysToDeath from data where DaysToDeath is not null
+
+select pa_id,dcr_desc, epi_SocDate, epi_StartOfEpisode,epi_EndOfEpisode,epi_DischargeDate,DaysToDeath,cedd_dateofdeath,M0906_DC_TRAN_DTH_DT from data where dcr_desc='PATIENT EXPIRED'  and cedd_dateofdeath =''
+
+select pa_id,count(*) as count,count(DISTINCT epi_DischargeDate) as count_dd from data where dcr_desc='PATIENT EXPIRED'  and cedd_dateofdeath ='' group by pa_id order by count desc
